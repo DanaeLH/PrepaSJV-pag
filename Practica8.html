@@ -1,0 +1,521 @@
+<html>
+<head>
+    <title>Practica 8 </title>
+</head>
+
+<style>
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:"Garamond";
+}
+
+.Prepa {
+    height: 200px;
+    width: 500px;
+
+}
+
+.container {
+    background: linear-gradient(rgba(153, 184, 152),rgba(254, 206, 171));
+    height: 220vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    padding: 1rem 3rem 0 3rem;
+    justify-content: space-between;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(233, 232, 232);
+    padding-inline: 1.5rem;
+    font-size: 2rem;
+}
+
+a:hover {
+    opacity: 1.7;
+}
+
+.left-nav {
+    display:inline-flex
+}
+
+.mid-nav a {
+    font-size: 4.25rem;
+}
+
+.right-nav img {
+    height: 400px;
+    width: 600px;
+    border-radius: 15%;
+    cursor: pointer;
+}
+
+.mid-info {
+    color: white;
+    padding: 10rem 5rem 0 5rem;
+    height: 600px;
+}
+
+
+.slide {
+    position: relative;
+    box-shadow: 60px 60px 60px rgba(0, 0, 0, 0.64);
+    margin-top: 100px;
+}
+.slide-inner {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: calc( 500px + 3em);
+}
+.slide-open:checked + .slide-item {
+    position: static;
+    opacity: 100;
+}
+.slide-item {
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: opacity 0.6s ease-out;
+    transition: opacity 0.6s ease-out;
+}
+.slide-item img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+.slide-control {
+    background: rgba(0, 0, 0, 0.28);
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    font-size: 40px;
+    height: 40px;
+    line-height: 35px;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    cursor: pointer;
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    text-align: center;
+    width: 40px;
+    z-index: 10;
+}
+.slide-control.prev {
+    left: 2%;
+}
+.slide-control.next {
+    right: 2%;
+}
+.slide-control:hover {
+    background: rgba(0, 0, 0, 0.8);
+    color: #aaaaaa;
+}
+#slide-1:checked ~ .control-1,
+#slide-2:checked ~ .control-2,
+#slide-3:checked ~ .control-3 {
+    display: block;
+}
+.slide-indicador {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+}
+.slide-indicador li {
+    display: inline-block;
+    margin: 0 5px;
+}
+.slide-circulo {
+    color: #906531;
+    cursor: pointer;
+    display: block;
+    font-size: 35px;
+}
+.slide-circulo:hover {
+    color: #E87EAE;
+}
+#slide-1:checked ~ .control-1 ~ .slide-indicador
+     li:nth-child(1) .slide-circulo,
+#slide-2:checked ~ .control-2 ~ .slide-indicador
+      li:nth-child(2) .slide-circulo,
+#slide-3:checked ~ .control-3 ~ .slide-indicador
+      li:nth-child(3) .slide-circulo {
+    color: #428bca;
+}
+#titulo {
+    width: 100%;
+    position: absolute;
+    padding: 0px;
+    margin: 0px auto;
+    text-align: center;
+    font-size: 27px;
+    color: rgba(255, 255, 255, 1);
+    font-family: 'Open Sans', sans-serif;
+    z-index: 9999;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.33),
+         -1px 0px 2px rgba(255, 255, 255, 0);
+} 
+
+
+.name {
+    font-size: 6rem;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.name span {
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+.work {
+    letter-spacing: 1.5px;
+}
+
+.sec-des {
+    background: linear-gradient(rgba(254, 206, 171),rgba(153, 184, 152));
+    height: 120vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.sec-des-left {
+    width: 550px;
+}
+
+table{
+    margin-left:350px;
+   
+}
+
+.not-1
+ {
+    font-size: 23;
+    color:#2A363B;
+    font-family: "HoloLens MDL2 Assets";
+    
+    top:600px;
+    left: 100px;
+    width:380px; 
+    height:300px; 
+    overflow:auto;
+}
+.not-2 {
+    font-size: 23;
+    color:#2A363B;
+    font-family: "HoloLens MDL2 Assets";
+    
+    top:2400px; 
+    left:680px; 
+    width:380px;
+    height:300px; 
+    overflow:auto;
+}
+.not-3{
+    font-size: 23;
+    color:#2A363B;
+    font-family: "HoloLens MDL2 Assets";
+    top:400px;
+    left:660px;
+    width:380px;
+    height:300px;
+    overflow:auto;
+}
+
+.Ext-1{
+    font-size: 30;
+    color:#2A363B;
+    font-family:"castellar";
+    position:absolute;
+    top:2250px;
+    left:1550px;
+    width:260px;
+    height:900px;
+    overflow:auto;
+
+}
+.Ext-2{
+    font-size: 30;
+    color:#2A363B;
+    font-family:"castellar";
+    position:absolute;
+    top:2250px;
+    right:1580px;
+    width:260px;
+    height:900px;
+    overflow:auto;
+
+
+}
+
+
+.exp {
+    padding: 10.1rem 7.5rem;
+    background: linear-gradient(rgba(153, 184, 152),rgba(254, 206, 171));
+    color: rgb(235, 235 , 235);
+}
+
+.exp h3 {
+    color: rgb(255, 255, 255);
+    font-size: 4;
+    font-family: "elephant pro";
+    align-items: center;
+
+}
+
+
+
+.exp-left {
+    order: 2;
+}
+
+.contact {
+    background: linear-gradient(rgba(254, 206, 171),rgba(42, 54, 59));
+    padding: 9rem 7.5rem;
+    color: rgb(255, 255, 255);
+}
+
+.contact > p {
+    color: #2A363B;
+}
+
+h2 {
+    font-size: 10rem;
+}
+
+.free {
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.contact-text1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.email {
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+hr {
+    width: 95vw;
+    margin: 0 auto;
+}
+
+footer {
+    background: #2A363B;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2.5rem;
+    color: rgb(255, 255, 255);
+}
+
+footer a {
+    font-size: 20;
+    font-family: "Cambria";
+    align-items: center;
+    text-decoration: none;
+    padding-inline: 1.25rem;
+    color: rgb(255, 255, 255);
+}
+
+footer p {
+    font-weight: 500;
+    cursor: pointer;
+}
+
+</style>
+
+
+<body>
+    <div class="prepa">
+    <Img src="Prepa.png"><br><br><br><br>
+    </div>
+
+<div class="container" id="Inicio">
+   <header>
+     <nav>
+       <div class="left-nav">
+         <a href="#Inicio">Inicio</a>
+         <a href="#Noticias">Noticias</a>
+         <a href="#MasInfo">Más información</a>
+         <a href="#Contacto">Contacto</a>
+       </div>
+<br><br>
+
+<div class="right-nav">
+    <a href="#footer">
+     <p><img alt="Prepa San Jose del Valle" height="198" onmouseout="this.src='https://tlajomulco.gob.mx/sites/default/files/150218_TLJ_WEB_Banner_Postlink_PREPA_UdeG-01_3.png ';" onmouseover="this.src='https://pr0.nicelocal.com.mx/4P-mlZk6MWvp1CjEZPH0Xw/587x440,q85/4px-BW84_n0QJGVPszge3NRBsKw-2VcOifrJIjPYFYkOtaCZxxXQ2T95cI2rrZILy1hrQl_wMpgX2zmem7uR2JCyHQ0POY4uDRgucPxr7WpPb0w7rfPRhg ';" src="https://tlajomulco.gob.mx/sites/default/files/150218_TLJ_WEB_Banner_Postlink_PREPA_UdeG-01_3.png " /></p>
+     </a>
+  </div>
+ </nav>
+</header>
+
+<section>
+ <div class="mid-info">
+    <div class="name">Preparatoria<br>
+      <span>San Jose del Valle</span>
+    </div>
+
+<div class="work">Aylin Lizaola</div>
+  </div>
+</section>
+
+<div class="slide">
+  <div class="slide-inner">
+    <input class="slide-open" type="radio" id="slide-1" name="slide" aria-hidden="true" hidden="" checked="checked">
+
+<div class="slide-item">
+  <img src="https://lh3.googleusercontent.com/p/AF1QipMqQRH8blJzhatKAB6GphhFMbJ2s5YZyLnQIeMJ=s680-w680-h510  " width=2000>
+</div>
+
+<input class="slide-open" type="radio" id="slide-2" name="slide" aria-hidden="true" hidden="">
+ <div class="slide-item">
+  <img src="https://lh3.googleusercontent.com/p/AF1QipPFaj45RmXhDK17dYcP9bqHaOCy6qyi11kQ_UX-=s680-w680-h510  " width=2000>
+ </div>
+
+
+<input class="slide-open" type="radio" id="slide-3" name="slide" aria-hidden="true" hidden="">
+ <div class="slide-item">
+  <img src="https://lh3.googleusercontent.com/p/AF1QipMjyECFbyhy5NiG7xjuaGoGw2-62l6AyRlUXK0x=s680-w680-h510 " width=2000>
+ </div>
+
+ <label for="slide-3" class="slide-control prev control-1">‹</label>
+ <label for="slide-2" class="slide-control next control-1">›</label>
+ <label for="slide-1" class="slide-control prev control-2">‹</label>
+ <label for="slide-3" class="slide-control next control-2">›</label>
+ <label for="slide-2" class="slide-control prev control-3">‹</label>
+ <label for="slide-1" class="slide-control next control-3">›</label>
+
+<ol class="slide-indicador">
+  <li>
+   <label for="slide-1" class="slide-circulo">•</label>
+  </li>
+  <li>
+   <label for="slide-2" class="slide-circulo">•</label>
+  </li>
+  <li>
+   <label for="slide-3" class="slide-circulo">•</label>
+  </li>
+</ol>
+ </div>
+ </div> 
+ </div>
+
+<section class="sec-des" id="Noticias">
+  <div class="sec-des-left">
+  <table bordercolor=#9CB898  border size=1>
+    <tr><div align=center> 
+     <td colspan=3><marquee behavior="alternate"><font size=10 color=#2A363B face=" Bodoni mt black">Noticas sobre la prepa SJV</marquee></td>
+    </tr>
+
+    <tr>
+     <td><div align=center> <font size=10 color=white face="Bodoni mt condensed"> ExpoCUCEI
+     <td><div align=center> <font size=10 color=white face="Bodoni mt condensed"> Space Messengers 
+     <td><div align=center> <font size=10 color=white face="Bodoni mt condensed"> Samuel Kishi
+    </tr>
+
+    <tr>
+      <td><p><img alt="Prepa San Jose del Valle" width="380" height="370" onmouseout="this.src=' https://scontent-qro1-2.xx.fbcdn.net/v/t39.30808-6/426563075_846500343946995_8872268089420358723_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=Fude9oVVu-YAX8MavZq&_nc_ht=scontent-qro1-2.xx&oh=00_AfC65pECG8dx7HPYbaWBy-edmn6_OeNN19ZN9Gx1D3DksQ&oe=65DC853D ';" onmouseover="this.src='https://scontent-qro1-1.xx.fbcdn.net/v/t39.30808-6/428443748_846500393946990_3889913948343840076_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=3t8ZXcfLkBkAX_lziLV&_nc_ht=scontent-qro1-1.xx&oh=00_AfA96c8VbyLyezPfGzgm6CtJ7ZncN0TgB1ayuuXnE5FJ-Q&oe=65DC6734 ';" src="https://scontent-qro1-2.xx.fbcdn.net/v/t39.30808-6/426563075_846500343946995_8872268089420358723_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=Fude9oVVu-YAX8MavZq&_nc_ht=scontent-qro1-2.xx&oh=00_AfC65pECG8dx7HPYbaWBy-edmn6_OeNN19ZN9Gx1D3DksQ&oe=65DC853D  ">
+      <td><p><img alt="Prepa San Jose del Valle" width="380" height="370" onmouseout="this.src=' https://scontent-qro1-2.xx.fbcdn.net/v/t39.30808-6/425532908_783565810484343_463316857481773575_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=3635dc&_nc_ohc=aCl-Rkez_0UAX-hVrLD&_nc_ht=scontent-qro1-2.xx&oh=00_AfAOEs18_q-NAmHDfkXJowBsmovVKEQadYAVGX_dU8Ybkg&oe=65DC3DF2';" onmouseover="this.src=' https://scontent-qro1-1.xx.fbcdn.net/v/t39.30808-6/425540500_783565787151012_3096724291260328445_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=3635dc&_nc_ohc=99-xBrn6FpsAX9m-7sj&_nc_ht=scontent-qro1-1.xx&oh=00_AfDJTthEbdm7mU1yh8kaSIhKUKgGV--KwHqqGScE2NUgYQ&oe=65DD2425 ';" src=" https://scontent-qro1-2.xx.fbcdn.net/v/t39.30808-6/425532908_783565810484343_463316857481773575_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=3635dc&_nc_ohc=aCl-Rkez_0UAX-hVrLD&_nc_ht=scontent-qro1-2.xx&oh=00_AfAOEs18_q-NAmHDfkXJowBsmovVKEQadYAVGX_dU8Ybkg&oe=65DC3DF2 ">
+      <td><p><img alt="Prepa San Jose del Valle" width="380" height="370" onmouseout="this.src=' https://scontent-qro1-1.xx.fbcdn.net/v/t39.30808-6/406656128_803463841583979_6858957294512928586_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=3635dc&_nc_ohc=JfIbQjd4BY8AX89WSGk&_nc_ht=scontent-qro1-1.xx&oh=00_AfAOTHZiC0hm4sehlT9BxX97ukZZf2nyBAtbzexI2M8TBw&oe=65DD37A5';" onmouseover="this.src=' https://scontent-qro1-1.xx.fbcdn.net/v/t39.30808-6/407417352_803463781583985_2062752743555340859_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=3635dc&_nc_ohc=E7kZ4EI2DBAAX-CuW6i&_nc_ht=scontent-qro1-1.xx&oh=00_AfAt2cY41YCdcyoAt8aDt3eVM715jZiNdTgXjlXPaDWSpQ&oe=65DD2579 ';" src="https://scontent-qro1-1.xx.fbcdn.net/v/t39.30808-6/406656128_803463841583979_6858957294512928586_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=3635dc&_nc_ohc=JfIbQjd4BY8AX89WSGk&_nc_ht=scontent-qro1-1.xx&oh=00_AfAOTHZiC0hm4sehlT9BxX97ukZZf2nyBAtbzexI2M8TBw&oe=65DD37A5  ">
+     </tr>
+           
+    <tr>
+      <td><div class="not-1">
+        El día 15 de febrero fue un dia verdaderamente emocionante en nuestro plantel, ya que recibimos la distinguida presencia del Dr. Marco Antonio Pérez Cisneros, Rector del CUCEI, quien impartió una conferencia magistral titulada "Inteligencia Artificial" para nuestros estudiantes. La conferencia fue una oportunidad invaluable para explorar los avances y aplicaciones de esta fascinante área de estudio, brindando a nuestros jóvenes una visión más profunda y actualizada sobre el tema.
+        Además, tuvimos el privilegio de organizar EXPOCUCEI, un evento extraordinario donde más de 15 carreras del centro universitario se congregaron para proporcionar a nuestros estudiantes información detallada y relevante sobre cada una de ellas. Desde ingeniería y ciencias de la computación hasta artes y humanidades, esta exposición fue una ventana única para explorar las diversas opciones académicas y profesionales disponibles en nuestra institución.            
+        Nos sentimos profundamente agradecidos por el apoyo incondicional de nuestras autoridades en la realización de estas enriquecedoras actividades, que sin duda contribuyen de manera significativa al desarrollo integral de nuestros estudiantes. Estamos comprometidos en brindarles las mejores oportunidades de aprendizaje y crecimiento, y eventos como estos son un testimonio de nuestro firme compromiso con su éxito académico y profesiona
+                                                                        
+
+       <td><div class="not-2">
+         El Consulado General reconoce a miembros de Preparatoria de San José del Valle que participaron en Space Messengers
+         El proyecto se implementó a través de un mecanismo de colaboración entre alumnos del plantel de la UdeG con estudiantes de Albuquerque, Nuevo México.
+         Durante siete semanas en 2023, estudiantes y profesores de la Preparatoria San José del Valle de Tlajomulco de Zúñiga, de la Universidad de Guadalajara, se capacitaron y compartieron experiencias con estudiantes y comunidad de Albuquerque, Nuevo México, a través del proyecto Space Messengers, con el cual, se busca que por medio de la educación, grupos de jóvenes en el mundo hagan una simbiosis entre la ciencia y el arte para diseñar videos que viajarán por el mundo para compartir los aprendizajes de los participantes.
+         El proyecto es implementado por STEMarts Lab, y es promovido por el Consulado General. El equipo de la Preparatoria de San José del Valle estuvo integrado por 25 estudiantes y cinco docentes.
+         La fundadora de la iniciativa, Agnes Chavez, aseveró que Space Messengers es un proyecto que busca el intercambio entre alumnos de diversas latitudes del mundo; la misión es que cada comunidad participante diseñe un mensaje que pueda producirse en formato de videos cortos donde la idea a comunicar se centre en utilizar el arte para difundir la importancia de las ciencias, de ahí la relación en el identificador del proyecto con las áreas STEM (Ciencia, tecnología, ingeniería y Matemáticas, por sus siglas en inglés).
+                                                                
+        <td><div class="not-3">  
+          El 1 de diciembre del 2023 será recordado como un día extraordinario en nuestra institución, ya que recibimos la visita ilustre del aclamado cineasta Samuel Kishi, director de renombrados largometrajes como "Somos Mari Pepa" y "Los Lobos", así como del galardonado cortometraje de animación "El año del radio", merecedor del prestigioso premio Ariel. Durante su visita, tuvimos el privilegio de disfrutar de una proyección especial de sus obras, lo que enriqueció aún más la experiencia.
+          Pero la visita de Kishi fue mucho más que una simple presentación de películas; fue una oportunidad única para sumergirnos en el fascinante mundo del cine desde la perspectiva de un creador de renombre. Samuel Kishi compartió con nosotros no solo su labor como cineasta, sino también los entresijos de su proceso creativo, brindándonos una visión privilegiada de la industria cinematográfica y el arte de contar historias.
+          Sin embargo, lo más impactante de la visita de Kishi fue su profunda reflexión sobre la importancia de las historias. Nos recordó que las historias no solo nos entretienen, sino que también nos conectan, nos inspiran y nos ayudan a resistir los desafíos de nuestro tiempo. Habló con pasión sobre la relevancia de contar nuestras propias historias, aquellas que nos definen como individuos y como sociedad, y el poder transformador que estas tienen como testimonio de una época y como herramienta de resistencia.
+          La presencia de Samuel Kishi en nuestro plantel dejó una huella imborrable en todos los presentes, inspirándonos a apreciar y valorar el arte del cine en toda su complejidad y profundidad. Su visita fue mucho más que un evento cultural; fue un recordatorio conmovedor del poder que tienen las historias para cambiar el mundo y un estímulo para seguir contando las nuestras con pasión y autenticidad. Estamos profundamente agradecidos por la oportunidad de haber recibido a un talento tan excepcional y esperamos con ansias seguir explorando el fascinante universo del cine en el futuro.
+        </tr>
+           
+         <tr>
+           <td><div class="Ext-1">  
+             <p align="center"> Más imágenes</p>
+             <img src="https://scontent-qro1-2.xx.fbcdn.net/v/t39.30808-6/317829800_590815716182127_1519035445702648768_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=3635dc&_nc_ohc=WjjRlteME5EAX-4Qa2e&_nc_ht=scontent-qro1-2.xx&oh=00_AfD-hsnjVDBMtcUjetLqQgIm67Ey3JSpsA-aG_V8MXgp8g&oe=65DC3BCA " width="260" height="280">
+             <img src="https://scontent-qro1-1.xx.fbcdn.net/v/t39.30808-6/317834812_590815616182137_1796748484459000101_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=3635dc&_nc_ohc=l83jrRff8ZAAX-mdV8Y&_nc_ht=scontent-qro1-1.xx&oh=00_AfAIxJitK1E5_MVAbRoebMe0dmHE_ItnO4c5UNZuiasMaQ&oe=65DBBA4C" width="260" height="280">
+             <img src="https://scontent-qro1-2.xx.fbcdn.net/v/t39.30808-6/401858327_794148922515471_9046478471906952611_n.jpg?stp=c52.0.206.206a_dst-jpg_p206x206&_nc_cat=109&ccb=1-7&_nc_sid=3d9721&_nc_ohc=9vfRL2tYRXcAX8djmUI&_nc_ht=scontent-qro1-2.xx&oh=00_AfAPwvnQdvUEu5IAxXbXbuHAQzardecevGGZ-R8_jwCtTA&oe=65DC8C40 " width="260" height="280" >
+             <img src=" https://scontent-qro1-1.xx.fbcdn.net/v/t39.30808-6/400425611_793488952581468_5595933371758828309_n.jpg?stp=c34.0.206.206a_dst-jpg_p206x206&_nc_cat=110&ccb=1-7&_nc_sid=3d9721&_nc_ohc=PmZkMC8-FUsAX_5LNW7&_nc_ht=scontent-qro1-1.xx&oh=00_AfDJOTdSHt9Ikrzl2dPgc6jmHi8A0WblGw11lPpk0kBs_g&oe=65DC41B7" width="260" height="280" >
+
+         <td><div class="Ext-2">
+             <p align="center">Más imágenes </p>
+             <img src=" https://scontent-qro1-2.xx.fbcdn.net/v/t39.30808-6/381211504_764838365446527_8226995134583103397_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=lHZcsAxpOJsAX_U25mI&_nc_ht=scontent-qro1-2.xx&oh=00_AfD-09Vngr2A3Kneja2NHsPpsv3Zrg1Ia6juFoZ2gHOfJg&oe=65DBED1C" width="260" height="280">
+             <img src="https://scontent-qro1-2.xx.fbcdn.net/v/t39.30808-6/379447309_764838188779878_315979816271251260_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=ZYpvjCvhsBwAX9BTEBw&_nc_ht=scontent-qro1-2.xx&oh=00_AfCC7TIflIPsXL5xWo9g8kMl3zv-KS3w7Rqcw0oENxtW0A&oe=65DACBF1" width="260" height="280">
+             <img src="https://scontent-qro1-2.xx.fbcdn.net/v/t39.30808-6/398713681_789117873018576_8777708505473637770_n.jpg?stp=c54.0.206.206a_dst-jpg_p206x206&_nc_cat=107&ccb=1-7&_nc_sid=3d9721&_nc_ohc=Ib2AIAtKc40AX9W5MSJ&_nc_ht=scontent-qro1-2.xx&oh=00_AfC9YYp7IsnEaPxISksHYFMJrqso2g68UG2s66uB3P4Jrw&oe=65DC5D31 " width="260" height="280" >
+             <img src="https://scontent-qro1-2.xx.fbcdn.net/v/t39.30808-6/398710521_789117649685265_9160815028456894914_n.jpg?stp=c52.0.206.206a_dst-jpg_p206x206&_nc_cat=109&ccb=1-7&_nc_sid=3d9721&_nc_ohc=tkcEVEx0KxoAX-KFL43&_nc_ht=scontent-qro1-2.xx&oh=00_AfBw_lsWdT6wNk8u4169LsaUuaxyNLFZY76H3AnXysPw5A&oe=65DD9700 " width="260" height="280" >
+          </tr>
+           </table>
+        </div>
+  </section>
+
+<section class="sec-des exp" id="MasInfo">
+   <h3><font size=10 color=white face=" Bodoni mt black"><div align="center">Más información</h3>
+   <div class="sec-des-left exp-left">
+   </div> <br><br>
+   <iframe width="760" height="415" src="https://www.youtube.com/embed/vAfZujEvaag?si=BKCtPbWahnm6L1dz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe width="760" height="415" src="https://www.youtube.com/embed/hvsWp35OAD8?si=H0kmROQkudeuFBf3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        
+    </section>
+    
+    <section class="contact" id="Contacto">
+        <h2>Contacto</h2>
+        <p class="contact-text1">
+          Puedes encontrar más información en 
+        </p>
+        <p class="email">
+            sanjosedelvalle.classroom@academicos.udg.mx
+        </p>
+    </section>
+    <hr>
+    <footer id="footer">
+        <div class="left-nav">
+            <a href="#Inicio">Inicio</a>
+            <a href="#Noticias">Noticias</a>
+            <a href="#MasInfo">Más Información</a>
+            <a href="#Contacto">Contacto</a>
+        </div>
+        <div class="right-nav">
+            <a href="#Inicio"> Preparatoria San Jose del Valle</a>
+        </div>
+    </footer>
+</body>
+</html>
